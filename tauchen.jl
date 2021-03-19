@@ -62,9 +62,9 @@ end
 using Plots
 include("simul_mc.jl");
 
-ρ = 0.5; σ = 2; N = 7;
+ρ = 0.5; σ = 2; N = 7; T = 100;
 
 (Π, S) = tauchen(N, ρ, σ);
-z_mc = simul_mc(Π, S, 4, 100);
+z_mc = simul_mc(Π, S, 4, T);
 
-plot(z_mc)
+plot(0:T, z_mc)

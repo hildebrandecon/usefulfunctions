@@ -38,7 +38,8 @@ using Plots
 
 Π = [0.9 0.1 0.0; 0.4 0.4 0.2; 0.1 0.1 0.8];
 S = [-1, 0, 1];
+T = 100;
 
-z_mc = simul_mc(Π, S, 2, 100);
+z_mc = simul_mc(Π, S, 2, T);
 
-plot(z_mc)
+plot(0:T, z_mc)
