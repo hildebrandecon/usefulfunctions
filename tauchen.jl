@@ -18,7 +18,7 @@ using Distributions
 
 =#
 
-function tauchen(N::Integer, ρ::Real, σ::Real = 1, n_std::Integer = 3)
+function tauchen(N::Integer, ρ::Real, σ::Real = 1, n_std::Integer = 4)
 
     # Step 1: discretise the state space
     σ_z = sqrt( σ / (1 - ρ^2) )
@@ -57,3 +57,14 @@ function tauchen(N::Integer, ρ::Real, σ::Real = 1, n_std::Integer = 3)
 
 end 
 
+# Example
+
+using Plots
+include("simul_mc.jl");
+
+ρ = 0.5; σ = 2; N = 7;
+
+(Π, S) = tauchen(N, ρ, σ);
+z_mc = simul_mc(Π, S, 4, 100);
+
+plot(z_mc)
