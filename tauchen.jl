@@ -53,7 +53,7 @@ function tauchen(N::Integer, ρ::Real, σ::Real = 1, n_std::Integer = 4)
         error("Rows do not sum to one.")
     end
 
-    return (Π, z)
+    return (Π, Array(z))
 
 end 
 

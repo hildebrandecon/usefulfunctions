@@ -34,3 +34,4 @@ using Plots
 z_ar = simul_ar(ρ, σ, z0, T);
 
 plot(0:T, z_ar)
+
