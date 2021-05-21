@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage[landscape=true]{geometry}
+
+\usepackage{pdfpages}
+\usepackage{pgffor}
+
+\newcounter{pdfpages}
+\newcommand*{\getpdfpages}[1]{%
+	\begingroup
+	\sbox0{% 
+		\includegraphics{#1}%
+		\setcounter{pdfpages}{\pdflastximagepages}%
+	}%
+	\endgroup
+}
+
+\begin{document}
+	\getpdfpages{DUMMY.pdf}
+	\foreach \x in {1,...,\value{pdfpages}} {
+		\includepdf[pages=\x]{DUMMY}
+		\newpage\null\thispagestyle{empty}\newpage
+	}
+\end{document}
