@@ -1,4 +1,5 @@
 # Tauchen (1986)'s method for approximating AR(1) process with finite markov chain
+# Simple approach: linear grid (bins have equal sizes, equidistant midpoints)
 # Inspirations: Miao (2020) and QuantEcon
 
 using Distributions
